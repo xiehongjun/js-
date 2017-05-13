@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            height: 50px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="div">
+    222222222
+</div>
+<script>
+    /*function sum(n,m) {
+     var total=n+m;
+     console.log(n,m);//undefined undefined
+     }
+     sum();*/
+    /*function sum(n,m) {
+     var total=n+m;
+     console.log(n,m);//2 10
+     console.log(total);//12
+     }
+     sum(2,10);*/
+    /*function sum(n,m) {
+     var total=n+m;
+     console.log(n,m);//2 '10'
+     console.log(total);//'210'
+     }
+     sum(2,'10');*/
+    /*function sum(n,m) {
+     var total=n+m;
+     console.log(n,m);//2 "abc"
+     console.log(total);//'2abc'
+     }
+     sum(2,'abc');*/
+    //求和：数字的就相加，不是数字的能转化为数字就转数字，不能转数字的忽略
+    //求和就是为了得到一个值
+    /*function sum(n,m) {
+     //判断是一个数字isNaN()true--不是数字
+     if(!isNaN(n)||!isNaN(m)){//判断 n和m是数字的时候才相加
+     //n=1  m='2vb'
+     //&& n和m必须同时为数字，才能进行相加，一旦n或m一个不是数字，我们就得不到一个值
+     //|| n和m一个是数字的话，我们就求和，最终得到的值，要么是数字要么是NaN
+     var total=Number(n)+Number(m);
+     }
+     //var total=n+m;
+     console.log(total);//undefined
+     }
+     sum(1,'2vb');*/
+    /*if(!(0>1&&0<2)){
+     console.log(1);
+     }*/
+    // '||'当条件中有一个条件为真，整体为真  或
+    // '&&'当条件中有一个条件为假，整体为假  并且
+    // '!'取反
+
+    //求和最终我们要得到一个值(数字类型的值)
+    //n和m有可能是数字，也有可能不是数字
+    /*function sum(n,m) {
+     //先转化n和m
+     n=Number(n);
+     m=Number(m);
+     //判断n和m是不是数字，如果是数字就进行相加
+     if(!isNaN(n)||!isNaN(m)){//if()返回值是true或false
+     //||只要!isNaN(n)||!isNaN(m)有一个是真，就进行相加
+     //&&所有条件!isNaN(n)&&!isNaN(m)都为真，才进行相加
+     //如果n或m有一个不是数字，if里面的代码就不会执行
+     var total=n+m;
+     }
+     console.log(total);//3
+     //var total=n+m;
+     }
+     console.log(total);//total is not defined
+     sum(1,'2');*/
+
+    /*function sum() {
+     var total=1+1;
+     //console.log(total);
+     return total;//返回total代表的值，而不是变量本身
+     }
+     //sum();
+     //在函数外获取函数返回值，我们得有一个执行接收的地方--就是函数本身
+     //函数本身的执行结果，就是我们的返回值
+     console.log(sum());
+     //console.log(total);//total is not defined*/
+
+    //arguments
+
+    /*function sum() {
+     console.log(arguments);//[1, 2, 3, "5"]
+     for(var i=0;i<arguments.length;i++){
+     console.log(arguments[i]);
+     }
+     //0:1
+     //1:2
+     //2:3
+     //3:'5'
+     //callee:function sum() 调用者
+     //length:4
+
+     }
+     sum(1,2,3,'5');*/
+
+    //任意数求和：传递多少都可以进行求和
+    /*function sum() {
+     var total=null;
+     for(var i=0;i<arguments.length;i++){
+     var cur=parseFloat(arguments[i]);
+     //var cur=Number(arguments[i]);
+     //console.log(cur);
+     //var total=null;//每一次循环 total的值都是null
+     if(!isNaN(cur)){
+     //var total+=cur;
+     total+=cur;//total=null;
+     }
+     }
+     return total;
+     }
+     console.log(sum(1,'2','4','3b'));
+     //sum(1,'2','4','3b');*/
+    /*function sum() {
+     var total=null;
+     for (var i=0;i<arguments.length;i++){
+     if(!isNaN(arguments[i])){//isNaN默认是Number转化 ‘3d’-->NaN
+     var cur=parseFloat(arguments[i]);
+     total+=cur;
+     }
+     }
+     return total;
+     }
+     console.log(sum(1,'2','4','3b'));*/
+    /*function sum() {
+     //arguments是接受实参的副本
+     var total=null;//声明一个变量为空，之后求和的时候，向这个变量中进行累加
+     for(var i=0;i<arguments.length;i++){//循环arguments中的每一项
+     var cur=Number(arguments[i]);//循环每一项的时候，都将当前项强制转为数字
+     if (!isNaN(cur)){//当前项为数字的时候,进入判断
+     total+=cur;//将当前项累加到total这个变量中
+     }
+     }
+     return total;//将total代表的值，返值到函数外
+     console.log('ok');
+     }
+     console.log(sum(1,'2','4','3b'));//输出函数的返回值*/
+    /*function sum() {
+     var total=1+1;
+     console.log(total);
+     }
+     sum();*/
+    //匿名函数
+    //函数定义和执行一起完成：自执行函数
+    /*(function () {
+     var total=1+1;
+     console.log(total);
+     })();*/
+    /*!function () {
+        var total = 1 + 1;
+        console.log(total);
+    }();
+    +function () {
+        var total = 1 + 1;
+        console.log(total);
+    }();
+    -function () {
+        var total = 1 + 1;
+        console.log(total);
+    }();
+    ~function () {
+        var total = 1 + 1;
+        console.log(total);
+    }();*/
+    /*定义一个函数
+     (function () {
+     var total=1+1;
+     console.log(total);
+     })
+     ()函数执行
+     */
+    /*var oDiv=document.getElementById('div');
+    function sum() {
+        var total=1+1;
+        console.log(total);
+    }
+    //函数名代表的是函数本身，而不是函数执行结果
+    //sum();
+    oDiv.onclick=sum();
+    oDiv.onclick=sum;*/
+    //函数表达式：将函数直接当做值赋值给变量或者是某个对象的某个方法或者事件
+    //oDiv.onclick=sum();oDiv.onclick=的是函数的执行结果****************************************
+    //oDiv.onclick=sum;默认等号右侧的是一个定义的函数，只有触发左侧事件的时候才执行******************
+</script>
+</body>
+</html>

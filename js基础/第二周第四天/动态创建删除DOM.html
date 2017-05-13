@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            height:100%;
+        }
+        input{
+            display: block;
+            margin: 0 auto;
+            width: 80px;
+            height: 50px;
+        }
+        #bg{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.4);
+        }
+        #login{
+            margin: 20px auto;
+            width: 500px;
+            height: 500px;
+            background: #fff;
+        }
+        #btn{
+            float: right;
+            width: 50px;
+            height: 50px;
+            background: #ff6600;
+            cursor: pointer;
+            font-size:30px;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body id="box">
+<input type="button" value="登录">
+<script>
+    var box=document.getElementById('box');
+    var oBtn=document.getElementsByTagName('input')[0];
+    var oBg=document.createElement('div');
+    oBg.id='bg';
+    var login=document.createElement('div');
+    login.id='login';
+    var btn=document.createElement('div');
+    btn.id='btn';
+    btn.innerText='×';
+    login.appendChild(btn);
+    oBg.appendChild(login);
+    oBtn.onclick=function () {
+        box.appendChild(oBg);
+    };
+    btn.onclick=function () {
+        box.removeChild(oBg);
+    }
+</script>
+
+
+<!--<p id="p1"></p>-->
+<!--<script>
+    var box=document.getElementById('box');
+    var oDiv=document.createElement('div');
+    var oP=document.getElementById('p1');
+    oP.style.height='50px';
+    oP.style.background='yellow';
+    oDiv.style.height='40px';
+    oDiv.style.background='red';
+    //box.innerHTML=oDiv;//[object HTMLDivElement]
+
+    //创建属性节点 可以直接显示在html标签中
+    oDiv.setAttribute('你是谁','你猜');
+    oDiv.index=1;
+    oDiv.removeAttribute('你是谁');
+    box.appendChild(oDiv);
+    console.log(oDiv.getAttribute('你是谁'));//null
+    //console.dir(oDiv.index);
+    //console.dir(oDiv['你是谁']);×
+    //box.replaceChild(oDiv,oP);
+    //box.insertBefore(oDiv,oP);
+    //oP.parentNode.insertBefore(oDiv,oP);
+    //oP.parentNode.removeChild(oDiv);
+    /*var newP=oP.cloneNode();
+    newP.style.height='30px';
+    newP.style.background='green';
+    oDiv.appendChild(newP);
+    var newDiv=oDiv.cloneNode(true);
+    newDiv.style.background='blue';
+    box.appendChild(newDiv);*/
+</script>-->
+</body>
+</html>

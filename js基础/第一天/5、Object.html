@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<script>
+    //var message="Hello world!";
+    //console.log(message.toUpperCase());
+    //console.log(message.toLowerCase());
+    //.toUpperCase() 将字符串中的字母转为大写
+    //.toLowerCase() 将字符串中的字母转为小写
+    /* var obj={
+     name:'珠峰培训',
+     age:8,
+     1:2,
+     fn:function () {
+
+     },
+     ary:[]
+     };
+     var age;
+     var ary=[1,2,3,4,'111',function () {}];
+     console.log(obj.name);//  珠峰培训
+     console.log(obj['age']);// 8
+     console.log(obj[age]);//  undefined
+     //age is not defined  age没有被定义
+     //age是一个变量而不是一个对象的属性名
+     console.log(obj['1']);
+     console.log(obj[1]);
+     */
+    var obj = new Object();
+    //var obj={name:'耿大爷'};
+    //添加一个属性名为name，属性值是‘耿大爷’
+    obj.name = '耿大爷';
+    obj['age'] = '40岁';
+    obj[1] = 15010063597;
+    obj.b = '2';
+    obj.b = 2;//修改原有属性名b的属性值
+    obj.b = null;
+    delete obj['b'];
+    console.log(obj);//首先是数字，其次是添加的顺序输出
+    console.dir(obj);//首先是数字，其次是按照首字母顺序输出
+
+
+</script>
+</body>
+</html>

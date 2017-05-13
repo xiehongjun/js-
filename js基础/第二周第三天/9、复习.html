@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+1、数据类型
+基本数据类型（5）和引用数据类型（对象数据类型【类】和函数数据类型）
+2、数据类型的区别
+基本数据类型操作值，引用数据类型操作空间地址
+3、变量的赋值
+var obj={}
+var obj=(条件)?val1:val2;
+var obj=(1+2)?val1:val2;==>obj=val1;
+
+4、数据类型的检测
+typeof
+instanceof
+constructor
+Object.prototype.toString.call()
+
+5、两个值进行比较的规则
+对象==对象  {}==[]
+对象==字符串
+对象==布尔
+对象==数字
+字符串==布尔
+字符串==数字
+布尔==数字
+null==undefined  true
+null和undefined与其他相比 false
+NaN==NaN  false
+
+6、一个值判断真假的规则
+0 '' NaN null undefined为假
+
+7、自定义属性***********************
+for循环返给函数内的i值是一个最终值，如果想要得到i的每一次值的话，需要先将每一次的i值当做当前对象的属性值存储起来
+for(var i=0;i<oLis.length;i++){
+    oLis[i].index=i;
+    oLis[i].onclick=function(){
+        alter(this.index);
+        //在这个地方获取的i值，是length，并不是当前元素的索引，所以要将i值在函数之前就存给这个对象
+    }
+}
+
+8、字符串的方法****
+9、数组的方法****
+10、函数  【递归，arguments（任意数求和）】
+11、DOM获取元素的方法
+12、DOM的节点
+13、动态创建节点，添加节点
+14、创建属性节点，获取属性节点，删除属性节点
+15、Math
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

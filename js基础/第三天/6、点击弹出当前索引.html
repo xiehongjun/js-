@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--点击每一个按钮后，弹出'我是第n个按钮'-->
+<input type="button" value="第一个按钮">
+<input type="button" value="第二个按钮">
+<input type="button" value="第三个按钮">
+<input type="button" value="第四个按钮">
+<input type="button" value="第五个按钮">
+
+<script>
+    var oBtn=document.getElementsByTagName('input');
+    console.dir(oBtn[1]);
+    for (var i=0;i<oBtn.length;i++){
+        //console.log(i);//0 1 2 3 4
+        //想把东西保存下来，就得有容器  变量 / 属性
+        //var n=i;//n=4
+        //console.log(n);
+        //属性必须依附对象存在，找对象
+        //获取到的对象 oBtn--一个对象 的一个属性，存一个值
+        //获取到的对象
+        //oBtn[0].自定义属性=0
+        //oBtn[1].自定义属性=1
+        //oBtn[2].自定义属性=2
+        //oBtn[3].自定义属性=3
+        //oBtn[4].自定义属性=4
+        oBtn[i].n=i+1;
+        oBtn[i].onclick=function () {
+            //alert('我是第'+this.n+'个按钮');
+            alert(this.value);
+        }
+    }
+    //this指当前操作的对象，只有在事件发生的时候，浏览器才知道this是谁
+    console.log(i);//5
+</script>
+
+
+
+
+<!--<script>
+    var oBtn=document.getElementsByTagName('input');
+    //console.log(oBtn);
+   /* oBtn[0].onclick=function () {
+        alert('我是第1个按钮');
+    };
+    oBtn[1].onclick=function () {
+        alert('我是第2个按钮');
+    }*/
+   for (var i=0;i<oBtn.length;i++){
+       //console.log(i);//0 1 2 3 4
+       //我们需要将每一次循环的结果保存到一个地方，可以存到一个对象的一个属性中，存到哪一个对象的属性中
+       //oBtn [input,.....]
+       //oBtn.index=i;//这是一个对象，只能存一个值
+       //oBtn[0].index=0;
+       //oBtn[1].index=1;
+       //oBtn[2].index=2;
+       //oBtn[3].index=3;
+       //oBtn[4].index=4;
+       oBtn[i].index=i;//index 是我们自己给这个对象增加的一个属性，不是原来自带的属性
+       oBtn[i].onclick=function () {
+           alert('我是第'+(this.index+1)+'个按钮');
+           //函数内的i并不是每一次循环得到的i，而是得到了循环结束后最终的i值
+       };
+       //this 这个 指当事件发生的时候，我们才会知道this是谁，this是指当前执行这个方法的对象
+       //this 代替当前操作对象
+   }
+   console.log(i);//5
+
+    //在函数中获取到的变量值，是for循环的最终值
+    //解决：给每一个对象增加一个自定义属性，这个属性的属性值是每一次循环的值
+    //this指当前触发事件的对象
+</script>-->
+</body>
+</html>

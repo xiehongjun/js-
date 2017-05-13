@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--必考题：
+两个值比较  指的是==的比较  等号两侧会进行数据类型的转化 转化后再比较
+
+等号两侧是否为同一数据类型************
+如果不是，怎样转化
+
+![]&ndash;&gt;boolean &#45;&#45;boolean在和其他数据类型比较的时候，都转为数字
+!!''&ndash;&gt;boolean
+
+''&ndash;&gt;string   &#45;&#45;string在和其他数据类型比较的时候
+string==object   string不变 object&ndash;&gt;string
+string==除了object string都会变成数字
+
+123&#45;&#45;number 从来不变
+
+object和其他数据类型比较
+object==object  false
+object==string  object&ndash;&gt;string
+object==其他     object&ndash;&gt;string&ndash;&gt;number
+
+null==undefined  true
+
+NaN==NaN  false
+
+0 '' NaN null undefined 为假，其余都为真
+[]&ndash;&gt;''&ndash;&gt;0
+[1]&ndash;&gt;'1'&ndash;&gt;1
+[1,2]&ndash;&gt;'1,2'&ndash;&gt;NaN
+{}&ndash;&gt;'[object Object]'&ndash;&gt;NaN
+true&ndash;&gt;1
+false&ndash;&gt;0
+
+这周的重点：
+1、数组  ****
+方法：*****
+算法：机试
+2、字符串
+3、数学函数
+4、函数
+递归
+5、定时器
+6、DOM
+7、Date-->
+
+1、函数：函数就是一个方法，将重复使用的功能代码，封装成一个函数，那么其他地方都可以调用这个函数，并且每次调用都是独立执行
+
+函数的语法：
+定义和执行两部分：
+定义：
+function 函数名(形参){//定义形参，接收实参
+    函数体
+}
+函数名(实参);//向函数内传递参数
+
+函数接收参数（值）：形参或者arguments*******
+
+设置形参而实参没有传递，形参获取到的值为undefined
+
+外界无法获得函数内的变量或者其他值，我们将这种机制叫做闭包
+
+需要函数向外界传递值的时候，就要用到return
+return--带有返回值的函数
+return只能返回值********
+return出现在函数里，函数停止运行
+return可以单独出现，不进行返值，那么外面获取到函数的执行结果为undefined
+return返回变量代表的值，而不是变量本身******
+函数本身的执行结果，就是我们的返回值******
+
+arguments********
+函数接收参数的集合，是一个类数组，有索引有长度
+如何获得这个集合的长度-- arguments.length
+如何获得这个集合的第一项-- arguments[0]
+arguments本身是一个对象，有属性值和属性名
+
+函数接收参数的方法：形参/arguments*************
+
+函数分为实名函数和匿名函数
+自执行函数：
+函数表达式：
+xxx.onclick=sum();
+xxx.onclick=sum;
+以上的区别
+
+<!--DOM-->
+DOM:是描述html的关系图谱
+js可以通过操作html的DOM,来获取、修改、删除、增加DOM对象
+1、通过元素的id获取一个元素
+document.getElementById('id名称')
+id在文件中独一无二，所以获取范围之内是整个文档（document）
+如果id名在同一页面出现两次或两次以上，获取到的元素为第一个元素
+在ie67中，表单元素的name属性，也会被当做id名，所以在ie67下，需要单独处理
+在id67中，id名获取是不区分大小写，所以不能通过大小写来区分元素
+
+2、
+
+
+
+除了从html中获取元素对象，还可以用js向html中添加元素
+innerHTML='<p></p>';
+
+
+
+
+</body>
+</html>

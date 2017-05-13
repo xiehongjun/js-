@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--<script>
+    /*
+    Math:算数对象，处理js中的数学运算
+    1、Math.abs() 取绝对值  返回值是正数
+    eg：Math.abs(-1.3)&ndash;&gt;1.3
+    eg：Math.abs(0)&ndash;&gt;0
+    eg：Math.abs(9.36)&ndash;&gt;9.36
+    eg：Math.abs('-0.6')&ndash;&gt;0.6
+    2、Math.ceil()向上取整 （出现小数点就向上＋1）
+    eg：Math.ceil(1.1)&ndash;&gt;2 (1-2)
+    eg：Math.ceil(-1.1)&ndash;&gt;-1 (-2<&ndash;&gt;-1)
+    3、Math.floor()向下取整
+    eg：Math.floor(1.1)&ndash;&gt;1 (1-2)
+    eg：Math.floor(-1.1)&ndash;&gt;-2 (-2<&ndash;&gt;-1)
+    4、Math.round()四舍五入
+    eg：Math.round(2.3)&ndash;&gt;2 下一位<5 就舍弃
+    eg：Math.round(2.5)&ndash;&gt;3 下一位>=5 就进1
+    5、Math.max(val1,val2,val3...)取最大值
+    eg：Math.max(1,4,12,5,67,56)&ndash;&gt;67
+    6、Math.min(val1,val2,val3...)取最小值
+    eg：Math.min(1,4,12,5,67,56)&ndash;&gt;1
+    7、Math.random()获取[0-1)之间的随机小数（不包含1）
+    [0,1]     (0,1)
+    8、Math.round(Math.random()*(m-n)+n) 获取任意两个数之间的随机数***********
+     */
+    /*function getRound(n,m) {
+        //两个变量进行减法，第一个变量>第二个变量，我们需要将两个变量进行交换，就可以声明一个第三方，然后三者进行交换
+        //n=50 m=1  &ndash;&gt;  n=1  m=50
+        //n=m;&ndash;&gt;n=50
+        //m=n;&ndash;&gt;m=50  ->需要先将n的值存到一个地方，之后再将这个值给到m
+        var temp=n;//temp=n=50
+        n=m;//n=m=1
+        m=temp;//m=temp=50
+        return Math.round(Math.random()*(m-n)+n);
+        //     Math.round(Math.random()*(50-1)+1)
+        //     Math.round(0.22222*49+1)
+    }
+    //getRound(1,50);//取[1-50]之间的随机整数 取一个
+    console.log(getRound(50,1));*/
+
+    /*function getRound(n,m) {
+        if(n>m){
+            var temp=n;
+            n=m;
+            m=temp;
+        }
+        /!*var ary=[];
+        ary.push(xxx);*!/
+        return Math.round(Math.random()*(m-n)+n);
+    }*/
+    //我要取四个随机整数，在0-40之间
+    //执行四次取随机整数的公式，每一次执行将执行结果放在一个盒子中
+    /*function getRound(n,m) {
+        n=Number(n);
+        m=Number(m);
+        //n和m其中有一个不是数字的情况
+        if(isNaN(n)||isNaN(m)){
+            //如果传递进来的参数不是一个数字，就直接返回一个0-1之间的随机小数
+            return Math.random();
+        }
+        //n和m都是数字的情况下
+        if(n>m){
+            var temp=n;
+            n=m;
+            m=temp;
+        }
+        var ary=[];
+        for (var i=0;i<4;i++){
+            var val=Math.round(Math.random()*(m-n)+n);
+            ary.push(val);
+        }
+        return ary;
+    }
+    console.log(getRound(10,40));*/
+    /*Math end*/
+
+    /*string 对象*/
+    /*
+    String&#45;&#45;字符串类
+    字符串在js中，是存储字符串的变量
+    用引号将字符存储起来，可以是单引号，也可是双引号
+    如果引号内需要嵌套引号，单双循环，或者是双单循环
+    eg：'我是中国人'  "我是中国人"
+    eg：'<p class='name'></p>'==>'<p class='+'name'+'></p>' ×
+    eg：'<p class="name"></p>' √
+    */
+    //字符串也是对象，也可以用for in循环进行遍历
+    //var str='abcdefghigklmn';
+    //      0:a  1:b  2:c 3:d....
+    //[a,b,c,d....]
+    //0:a  1:b  2:c 3:d....
+    //str.length:14
+    //console.dir(str);
+    /*for (arrt in str){
+        console.log(arrt,str[arrt]);
+    }*/
+    //获取字符串中的第二项
+    //console.log(str[1]);
+    /*var str='一二三四';
+    for (arrt in str){
+        console.log(arrt,str[arrt]);
+    }
+    console.log(str.length);4*/
+    //var str='abcdefg';
+    //获取指定索引位置的字符   charAt(索引)
+    //console.log(str.charAt(4));
+    //console.log(str.length);//7
+    /*字符串截取***************************
+     substr(n,m) 从索引n开始，截取m个字符
+     substring(n,m) 从索引n开始找到索引m处，不包含m
+     slice(n,m) 从索引n开始找到索引m处，不包含m&ndash;&gt;支持负数作为索引（str.length+负数索引）
+     只写n没有m：代表截取到末尾位置
+     */
+    //var str='abcdefg';
+    //      -4-3-2-1
+    /*var str1=str.substr(0,2);
+    var str2=str.substring(0,2);
+    var str3=str.slice(-4,-1);
+    console.log(str1);//'ab'
+    console.log(str2);//'ab'
+    console.log(str3);//'def'*/
+    //var str='abcdefgba';
+    //查找指定字符在字符串中的索引位置
+    //字符在字符串中第一次出现的索引位置&#45;&#45;indexOf(字符)
+    //字符在字符串中最后一次出现的索引位置&#45;&#45;lastIndexOf(字符)
+    /*var first=str.indexOf('a');//0
+    var last=str.lastIndexOf('a');//8
+    var xx=str.lastIndexOf('z');//-1
+    console.log(first,last,xx);*/
+    /*var str='abcdefghijklmnopqrstuvwxyz';
+    var bigStr=str.toUpperCase();
+    console.log(bigStr);//'ABCDEFGHIJKLMNOPQRSTUVWXYZ'*/
+
+    /*var str='abcccdefghijklmnopqrstuvwxyz';
+    var str1=str.replace('c','124');
+    var str2=str1.replace('c','124');
+    console.log(str2);*/
+    //replace 不会改变原字符串
+    //replace 每一次只能改变一个字符
+
+    /*var str='abccdce';
+    console.log(str.search('c'));
+    //search(字符):查找字符出现在字符串中的索引值
+    //match()；匹配字符的，找到，就把找到的内容以数组的形式返回；找不到null
+    console.log(str.match('z'));*/
+    /*var str='2016/11/9 12:39:01';
+    var str1=str.split(' ');
+    var str2=str.split('/');
+    console.log(str1);//["2016/11/9", "12:39:01"]
+    console.log(str2);//["2016", "11", "9 12:39:01"]
+    var str='12345';
+    var str1=str.split();
+    console.log(str1);//['12345']*/
+    //["1", "2", "3", "4", "5"]
+    //split();不传入分隔符的话，会将整个字符串放在数组中
+
+    var str='2016/11/9 12:39:1';
+    //2016年11月09日12时39分01秒
+    //空格分 ['2016/11/9','12:39:01']
+    //'2016/11/9' 按照/分割 ['2016','11','9']
+    //'12:39:01'  按照:分割['12','39','01']
+    function getTime(str) {
+        var ary=str.split(' ');//['2016/11/9','12:39:01']
+        var ary1=ary[0].split('/');//["2016", "11", "9"]
+        var ary2=ary[1].split(':');//['12','39','01']
+        //console.log(ary,ary1,ary2);
+        return ary1[0]+'年'+zero(ary1[1])+'月'+zero(ary1[2])+'日'+zero(ary2[0])+'时'+zero(ary2[1])+'分'+zero(ary2[2])+'秒';
+    }
+    console.log(getTime(str));
+    //2016年11月9日12时39分01秒
+    //2016年11月09日12时39分01秒
+    function zero(num) {
+        num=Number(num);//先将参数转为数字
+        //01&#45;&#45;》1
+        return num<10?'0'+num:num;
+        /*if(num<10){
+            num=Number(num);
+            return '0'+num;
+        }else{
+            return num;
+        }*/
+    }
+    //console.log(zero(02));
+</script>-->
+数组常用方法
+第一类 增加，删除，替换
+    1.splice
+splice（） 原数组不变，返回一个空数组
+splice(n,m) 删除
+    splice(n,0,x) 增加
+    splice(n,m,x) 替换
+    2.push
+    3.pop
+    4.unshift
+    5.shift
+第二类 查找和克隆
+    6.slice(n,m) 从索引n截取到索引m 不包含m
+    7.ary1.concat(ary2)
+    克隆
+    splice(0)     改变原数组
+    slice(0)/slice();
+    concat()
+第三类 数组的排序和排列
+    8.reverse()
+    9.sort()-->只能按照第一位数字的大小进行排列，只能处理10以内的数字排序
+    9*.sort(function(a,b){return a-b})***
+第四类 数组转字符串
+    10.toString()
+    11.join(拼接形式)
+    eval() 把字符串转成JS代码来执行
+第五类 常用但不兼容的
+    12.indexOf() 存在：内容索引； 不存在-1
+    13.forEach(function(item,index){}) 没有返回值
+    14.map(function(item,index){}) 有返回值
+
+
+字符串常用方法
+    第一类：通过下标找到对应的字符或者编码
+    1.charAt() 通过下标找字符串中对应的字符
+    2.charCodeAt(); 通过下标找到每个字符对应的ASCII编码值；
+第二类：通过字符找到对应的索引
+    3.indexOf()  从前往后找，找到返回的当前字符对应的索引；找不到返回的都是-1；
+    4.lastIndexOf()从后往前找，找到返回的当前字符对应的索引；找不到返回的都是-1；
+第三类：字符串截取
+    5.substr(n,m) 从索引n开始，往后找m个，原字符串不发生改变
+    6.substring(n,m) 从索引n开始，到索引m，但不包含m；
+    7.slice(n,m)从索引n开始，到索引m，但不包含m；但是他可以取负值；
+第四类：字符串转数组
+    8.split(切割形式) 通过切割形式转成数组；
+第五类： 字符串转大小写
+    9.toUpperCase() 字符串转大写
+    10.toLowerCase() 字符串转小写
+第六类：字符串替换以及以后会用在正则的；
+    11.replace(); 字符串替换
+    12.search（）; 用来查找字符的，找到返回对应字符的索引； 找不到-1；
+    13.match（）；匹配字符的，找到，就把找到的内容以数组的形式返回；找不到null；
+    ['c',index:1,input:'abc']
+
+
+
+
+
+</body>
+</html>

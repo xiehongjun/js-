@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li id="list1">123456789jgfeefdcgfdxcv</li>
+    <li id="list2">123456789jgfeefdcgfdxcv</li>
+    <li id="list3">123456789jgfeefdcgfdxcv</li>
+    <li id="list4">123456789jgfeefdcgfdxcv</li>
+    <li id="list5">123456789jgfeefdcgfdxcv</li>
+    <li id="list6">123456789jgfeefdcgfdxcv</li>
+    <p>1234567489</p>
+    <p>1234567489</p>
+    <p>1234567489</p>
+</ul>
+<script>
+    var oList=document.getElementById('list');
+    //console.log(oList);
+    //var nodes=oList.childNodes;
+    //console.log(nodes);
+    //[text, li#list1, text, li#list2, text, li#list3, text, li#list4, text, li#list5, text, li#list6, text]
+    //var eNodes=oList.children;
+    //console.log(eNodes);
+    //模拟一个获取当前元素下所有的元素子节点
+    function getNodes(arrt,tagName) {
+        var nodes=arrt.childNodes;
+        var ary=[];
+        for (var i=0;i<nodes.length;i++){
+            if(nodes[i].nodeType===1){
+                if(tagName){
+                    //tagName===nodes[i].nodeName
+                    //nodes[i].nodeName是大写的标签名
+                    if(tagName.toUpperCase()===nodes[i].nodeName){
+                        ary.push(nodes[i]);
+                    }
+                }else{
+                    ary.push(nodes[i]);
+                }
+            }
+        }
+        return ary;
+    }
+    console.log(getNodes(oList,'li'));
+</script>
+</body>
+</html>

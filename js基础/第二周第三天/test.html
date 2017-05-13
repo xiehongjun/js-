@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            line-height: 30px;
+        }
+        .bg1{
+            background: palegoldenrod;
+        }
+        .bg2{
+            background: paleturquoise;
+        }
+        .bg3{
+            background: palevioletred;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1111111</li>
+    <li>1111111</li>
+    <li>1111111</li>
+    <li>1111111</li>
+    <li>1111111</li>
+    <li>1111111</li>
+    <li>1111111</li>
+    <li>1111111</li>
+    <li>1111111</li>
+    <li>1111111</li>
+</ul>
+<script>
+    var oLis=document.getElementsByTagName('li');
+    for (var i=0;i<oLis.length;i++){
+        oLis[i].className='bg'+(i%2+1);
+        oLis[i].index=i;
+        oLis[i].onclick=function () {
+            alert('我是第'+(this.index+1)+'个li');
+        };
+        var oldBg=null;
+        oLis[i].onmouseover=function () {
+            oldBg=this.className;
+            this.className='bg3';
+        };
+        oLis[i].onmouseout=function () {
+            this.className=oldBg;
+        };
+    }
+    function sum() {
+        var total=null;
+        for(var i=0;i<arguments.length;i++) {
+            var cur = arguments[i];
+            cur = Number(cur);
+            if (!isNaN(cur)) {
+                total += cur;
+            }
+        }
+            return total;
+    }
+    var total=sum(1,2,3,4,5,6,7,'8');
+    console.log(total);
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var ary=[1,2,3,1,3,2,6,7,3];
+    //[1, 2, 1, 2, 3, 3, 6, 7, 3]
+    //112233367
+    function qs(a) {
+        if(a.length<=1){
+            return a;
+        }
+        //找到参照项的索引
+        var eg=Math.floor(a.length/2);
+        var val=a.splice(eg,1)[0];
+        var left=[],right=[];
+        for (var i=0;i<a.length;i++){
+            if(val>a[i]){
+                left.push(a[i]);
+            }else{//>=
+                right.push(a[i]);
+            }
+        }
+        return qs(left).concat([val],qs(right));
+    }
+    var newAry=qs(ary);
+    console.log(newAry);
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

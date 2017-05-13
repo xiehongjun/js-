@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    <p>111</p>
+    <p>222</p>
+    <p id="p3">333</p>
+    <p>444</p>
+    <ul>
+        <li></li>
+    </ul>
+    <input type="text">
+</div>
+<script>
+    /*var oP=document.getElementById('p3');
+    var pre=oP.previousSibling;//找到第一个哥哥节点*/
+    //#text 文本节点  nodeType = 3
+    //元素节点  nodeType=1
+    /*for (var i=0;i<length;i++){
+        没有一个属性可以给我们所有oP对象的哥哥节点
+    }*/
+    //不需要长度的循环
+    /*while (pre&&pre.nodeType!==1){
+        //#text 文本节点  nodeType = 3
+        pre=pre.previousSibling;
+        //直到pre的nodeType为1的时候，循环结束
+    }
+    console.log(pre);*/
+    /*var oP=document.getElementById('p3');
+    var pre=oP.previousSibling;//找到第一个哥哥节点
+    var ary=[];
+    while (pre){
+        if(pre.nodeType==1){
+            ary.push(pre);
+        }
+        /!*else{//当当前项为1的时候，就不在向上查找了
+            pre=pre.previousSibling;
+        }*!/
+        //当当前项的nodeType===1，就向ary中添加
+        //添加后，我要继续向上找
+        pre=pre.previousSibling;
+    }
+    console.log(ary);*/
+</script>
+<!--<script>
+    //previousElementSibling 模拟这个效果
+    var oP=document.getElementById('p3');
+    var pre=oP.previousSibling;//获取oP这个对象的上一个节点
+    //循环所有的哥哥节点
+    while (pre&&pre.nodeType!==1){
+        //#text
+        //上一个节点存在，并且节点的nodeType值不为1的话
+        pre=pre.previousSibling;//继续向上查找
+    }
+    console.log(pre);
+    //没有一个属性可以让我们得到所有哥哥节点的集合，所以我们就没有长度范围
+    //for循环只和次数y,每次累加多少
+    //如果是比较的话，如果是从小到大比较 var i=0;i<length;i++
+    //如果是比较的话，如果是从大到小比较 var i=max;i<=0;i&#45;&#45;
+    /*if(pre.nodeType===1){
+        console.log(pre);
+    }*/
+
+
+</script>-->
+</body>
+</html>

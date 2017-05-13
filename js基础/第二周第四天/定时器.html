@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div{
+            margin: 0 auto;
+            width: 300px;
+            height: 50px;
+            border: 1px solid red;
+            cursor: pointer;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="div">点击获取验证码</div>
+<script>
+    //window.setInterval(fn,time);
+    //window.setTimeout(fn,time);
+    //fn 指的是函数的定义部分
+    //window可以省略
+    /*var time1=window.setInterval(function () {
+        console.log('acd');
+    },1000);//间隔器*/
+    /*var time2=window.setTimeout(function () {
+        console.log('acd');
+    },1000);//延迟器*/
+    //定时器是可以停止的，需要清除定时器
+    //window.clearInterval();
+    //window.clearTimeout();
+    /*var cont=null;
+    var time1=window.setInterval(function () {
+        console.log('123');
+        cont++;
+        if(cont==5){
+            window.clearTimeout(time1);
+        }
+    },1000);*/
+    /*if(cont==5){
+        window.clearTimeout(time1);
+    }*/
+
+    /*var tem1=window.setInterval(function () {
+        console.log('123');
+        window.setTimeout(function () {
+            clearInterval(1);//清除第几个定时器
+        },3000);
+    },1000);*/
+    //console.log(tem1);//1 代表第一个定时器
+    function getRound() {
+        //0-9之间不重复的数字 取四个
+        var ary=[];
+        while (ary.length<4){
+            var val=Math.round(Math.random()*9);
+            if(ary.indexOf(val)===-1){
+                ary.push(val);
+            }
+        }
+        return ary;
+    }
+    //document.write(getRound());
+    //点击执行一个定时器，执行10次后，就让定时器停止运行，执行的最后一次结果显示在div中
+    div.onclick=function () {
+        var cont=null;
+        var tem=setInterval(function () {
+            //getRound();
+            div.innerHTML=getRound();
+            cont++;
+            if(cont===3){
+                clearInterval(tem);
+                //div.innerText='你已经中奖';
+            }
+        },500);
+    }
+
+</script>
+</body>
+</html>

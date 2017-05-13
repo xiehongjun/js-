@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            line-height: 30px;
+            padding-left: 20px;
+            cursor: pointer;
+        }
+        .bg1{
+            background: red;
+        }
+        .bg2{
+            background: pink;
+        }
+        .bg3{
+            background: gold;
+        }
+        /*li:hover{
+            background: gold;
+        }*/
+    </style>
+</head>
+<body>
+<ul>
+    <li>我是列表项1</li>
+    <li>我是列表项2</li>
+    <li>我是列表项3</li>
+    <li>我是列表项4</li>
+    <li>我是列表项5</li>
+    <li>我是列表项6</li>
+    <li>我是列表项7</li>
+    <li>我是列表项8</li>
+    <li>我是列表项9</li>
+    <li>我是列表项10</li>
+</ul>
+<!--<script>
+    /*
+    每两行进行一次颜色的轮换，奇数行的class为bg1，偶数行class为bg2
+    鼠标移入的时候当前的li的class为bg3，移除的时候恢复原来的class值
+    */
+    var oLis=document.getElementsByTagName('li');
+    //当前行数/2余数为1 为奇数行，余数为0 是偶数行
+    //oLis[0:li,1:li,2:li,....]
+    //oLis[0] 获取到的是第一个li
+    //oLis[1] 获取到的是第二个li
+    //当前索引/2余数为1 为偶数行， 余数为0 是奇数行
+    //在给class赋值之前需要判断当前li是奇数行还是偶数行
+    for(var i=0;i<oLis.length;i++){
+        //0-9
+        //oLis[i].className='bg2';
+        /*if(i%2===0){
+            oLis[i].className='bg1';
+            oLis[i].oldBg='bg1';
+        }else{
+            oLis[i].className='bg2';
+            oLis[i].oldBg='bg2';
+        }*/
+        /*i%2===0?(oLis[i].className='bg1',oLis[i].oldBg='bg1'):(oLis[i].className='bg2',oLis[i].oldBg='bg2');*/
+        oLis[i].className='bg'+(i%2+1);
+        //onmouseover鼠标移入事件
+        var bg=null;
+        oLis[i].onmouseover=function () {
+            //console.log(oLis[i]);//undefined
+            //console.log(i);//10
+            //oLis[i].className='bg3';
+            //this&#45;&#45;当前发生的这个事件的对象，谁发生事情，这个this就是谁
+            bg=this.className;
+            this.className='bg3';
+        };
+        oLis[i].onmouseout=function () {
+            //this.className=this.oldBg;
+            this.className=bg;
+        };
+    }
+    console.log(i);//10
+    //方法中取到的变量i,是for循环的最终值，因为再函数被触发前，for循环已经结束，所以变量i的值是一个循环后的最终结果
+    //自定义属性，用来存一个值，为了不影响这个对象天生自带的属性
+</script>-->
+<script>
+    var oLis=document.getElementsByTagName('li');
+    for (var i=0;i<oLis.length;i++){
+        oLis[i].className='bg'+(i%2+1);
+        var bg=null;
+        oLis[i].onmouseover=function () {
+            bg=this.className;
+            this.className='bg3';
+        };
+        oLis[i].onmouseout=function () {
+            this.className=bg;
+        };
+        oLis[i].n=i;//0-9
+        oLis[i].onclick=function () {
+            //将每一次循环的索引值存储起来 0-9
+            alert('我是第'+(this.n+1)+'项');
+
+            //n is not defined
+        }
+    }
+
+    /*for(var i=0;i<4;i++){
+        var yes=true;
+        if(yes){
+            console.log(i);
+        }else{
+            console.log(i+1);
+        }
+    }*/
+</script>
+</body>
+</html>

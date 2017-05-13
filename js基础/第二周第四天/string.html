@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //var str='abcd';
+    /*var str='1-2-3-4-5';
+    var str3=str.split('-');
+    console.log(str3);*/
+    //var str2=str.search('d');
+    //var str2=str.match('d');
+    //["d", index: 3, input: "abcd"]
+    //console.log(str2);
+    //var str1=str.replace('a','A');//一次只能替换一个
+    //console.log(str1);
+    //var val1=str.charAt(0);
+    //console.log(val1);//a
+    //console.log(str.charCodeAt(0));//97
+    //var val2=str.substr(0,2);
+    //console.log(val2);//ab
+    //console.log(str);
+    //var val3=str.substring(0,3);
+    //var val4=str.slice(-2,-1);//c
+    //console.log(val3);//abc
+    //console.log(val4);//abc
+    //console.log(str.indexOf('r'));//-1
+    //console.log(str.lastIndexOf('g'));//-1
+    var time="2016-11-01 12:51:6";
+    //2016年11月01日 12时51分06秒
+    var str1=time.split(' ');
+    //console.log(str1);
+    var time1=str1[0].split('-');
+    var time2=str1[1].split(':');
+    //console.log(time1,time2);
+    var time3=time1[0]+'年'+zero(time1[1])+'月'+zero(time1[2])+'日 '+ zero(time2[0])+'时'+zero(time2[1])+'分'+zero(time2[2])+'秒';
+    document.write(time3);
+    //补齐0
+    function zero(n) {
+        n=Number(n);
+        if(n<10){
+            return '0'+n;
+        }else {
+            return n;
+        }
+    }
+</script>
+</body>
+</html>

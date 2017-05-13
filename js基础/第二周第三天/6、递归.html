@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--递归：方法自己调用自己-->
+<script>
+/*function sum(n) {
+    if(n===0){
+        return 0;
+    }
+    /!*var total=n+sum(n-1);
+    console.log(total);*!/
+    return n+sum(n-1);//当前参数和下一次执行的结果
+}
+sum(100);
+console.log(sum(100));*/
+    //第一次执行函数的时候，传递参数为100 total=100+sum(99)
+    //第二次执行函数的时候sum(99),传递进来的参数是99 total=100+sum(99)+sum(98)
+    //第三次执行函数的时候sum(98)，传递进来的参数是98 total=100+sum(99)+sum(98)+sun(97)
+    //一直向下减
+    //兆亿
+    //将0-100之内的可以整除2的数字相加
+    function sum(n) {
+        if(n===0){
+            return 0;
+        }
+        /*if(n%2===0){
+            return n+sum(n-1);
+        }*/
+        if(n%3==0&&n%5==0){
+            return n+sum(n-1);
+        }
+        return sum(n-1);
+    }
+    var total=sum(100);
+    console.log(total);
+</script>
+</body>
+</html>

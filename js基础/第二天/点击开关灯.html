@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+    </style>
+</head>
+<body id="box">
+<!--
+点击可视窗口切换可视窗口的背景颜色
+行内样式
+选择器（外链式或者内嵌式）
+-->
+<script>
+    //点击可视窗口，获取可视窗口，body
+    var oBox=document.getElementById('box');
+    //声明一个变量oBox存储和代表一个元素
+    //在整个文档下，通过元素的id名称获取一个id叫做box的元素
+    //document 文档  获取范围
+    //get  获取
+    //element 元素
+    //by 通过
+    //id  id名称
+    //console.log(oBox);
+    //oBox.onclick=oBox.style.backgroundColor='red';
+    //代码从上到下执行，直接将红色赋值给了整个元素的背景颜色
+    //我们的需求是由这个一个效果，平时不执行，只有点击的时候才执行
+    /*oBox.onclick=function () {
+        oBox.style.backgroundColor='red';
+    }*/
+    //点击第一次变红，点击第二次变黄，点击第三次变绿，点击第四次变蓝，点击第五次变红，点击第六次变黄...............
+    //在赋值之前，我们需要知道原来的值是什么，如果原来是红色，我们让他变成黄色，如果是黄色，变成绿色.....
+    /*oBox.onclick=function () {
+        //在重新赋值之前，我们要获取到原有的背景颜色
+        var bg=oBox.style.backgroundColor;
+        //console.log(bg);
+        if(bg==''){
+            oBox.style.backgroundColor='red';
+        }else if(bg=='red'){
+            oBox.style.backgroundColor='yellow';
+        }else if(bg=='yellow'){
+            oBox.style.backgroundColor='green';
+        }else if(bg=='green'){
+            oBox.style.backgroundColor='blue';
+        }else if(bg=='blue'){
+            oBox.style.backgroundColor='red';
+        }
+
+    }*/
+    oBox.onclick=function () {
+        var bg=oBox.style.backgroundColor;
+        //console.log(bg);
+        if(bg=='red'){
+            oBox.style.backgroundColor='yellow';
+        }else if(bg=='yellow'){
+            oBox.style.backgroundColor='green';
+        }else if(bg=='green'){
+            oBox.style.backgroundColor='blue';
+        }else {
+            oBox.style.backgroundColor='red';
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

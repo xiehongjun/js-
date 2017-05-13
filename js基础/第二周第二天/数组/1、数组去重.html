@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var ary=[1,1,11,2,2,3,3];
+    var obj={};
+    for(var i=0;i<ary.length;i++){
+        var r=ary[i];
+        if(obj[cur]===cur){
+            ary[i]=ary[ary.length-1];
+            ary.length--;
+            i--;
+        }obj[cur]=cur;
+    }console.log(ary);
+</script>
+<!--<script>
+    var ary=[1,2,3,1,2,3];
+    var obj={};
+    for(var i=0;i<ary.length;i++){
+        var cur=ary[i];
+        if(obj[cur]===cur){
+            //如果要删除当前项，就可以去数组中拿一个没有比较过的项进行补位
+            ary[i]=ary[ary.length-1];
+            ary.length&#45;&#45;;
+            i&#45;&#45;;
+            continue;
+        }
+        obj[cur]=cur;
+    }
+    console.log(ary);
+</script>-->
+<!--<script>
+    var ary=[1,2,3,1,2,3];
+    //      1,2,3,2,3
+    var obj={};
+    for (var i=0;i<ary.length;i++){
+        //obj[ary[i]]=ary[i];
+        var cur=ary[i];
+        if(cur===obj[cur]){
+            //i=0 cur=1
+            //1==obj[1] obj[1]==>undefined 已经将1作为属性名和属性值存了起来，obj中就有这个属性了
+            //i=3  cur=1
+            //1==obj[1]  1==1 true
+            //ary[3]删除掉
+            ary.splice(i,1);
+            i&#45;&#45;;
+            continue;
+        }
+        obj[cur]=cur;
+    }
+    console.log(ary);
+
+
+
+
+
+
+    /*var obj={};
+     obj[1]=1;
+     obj[2]=2;
+     obj[3]=3;
+     //对象的修改
+     obj[1]=1;
+     obj[2]=2;
+     obj[3]=3;*/
+    //Object {1: 1, 2: 2, 3: 3}
+
+    /*var obj={name:'zfpx'};
+    obj.name='珠峰培训';
+    console.log(obj);//{name:'珠峰培训'}*/
+
+
+
+
+
+
+
+    //ary=[1,2,3]
+    //定义一个空对象{}，将数组中的每一项，当做这个对象的属性名和属性值
+    //再让数组中的每一项和这个对象的属性值比较，如果两者比较返回true，就证明该项重复，如果比较返回值为false，说明该项没有重复
+    /*var obj={};
+    obj[1]==ary[0]
+    obj[1]第一次比较的时候获取到的值是undefined
+    undefined和其他数据类型都不相等
+    undefined==ary[0]
+    obj[1]=1;
+
+    obj[2]==ary[1]
+    obj[2]获得的值是undefined
+    undefined==ary[1]&#45;&#45;false
+    obj[2]=2;
+
+    obj[3]==ary[2]
+    obj[3]获得的值是undefined
+    undefined==ary[2]&#45;&#45;false
+    obj[3]=3;
+
+    obj={1:1,2:2,3:3}
+
+    obj[1]==ary[3] ary[3]获取到的值是1
+    1==1&#45;&#45;true
+    delete ary[3]
+
+    obj[2]==ary[4] ary[4]获取到的值是2
+    2==2&#45;&#45;true
+    delete ary[4]
+
+
+
+    obj[1]==ary[3]&#45;&#45;obj[1]的值和ary第4项代表的值相等&#45;&#45;ary[3]删除
+    obj[2]=2;
+    obj[3]=3;
+
+    obj={1:1,2:2,3:3}*/
+    /*var obj={};
+
+    obj['x']='we';
+    obj.name='zfpx';
+    obj['x']
+    //console.log(obj);//obj{x:'we',name:'zfpx'}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>-->
+</body>
+</html>

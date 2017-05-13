@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;}
+        ul{background-color: #3b87c4;
+            list-style: none;
+        padding:30px;}
+        span{display:inline-block;
+            width: 45px;
+            height:30px;
+            line-height:30px;
+            background: #5d9b1e;
+            border:1px solid #1f1f1f;
+            padding: 0 10px;
+        }
+        .bg0{background:red;}
+        .bg1{background:green;}
+        .bg2{background:blue;}
+
+    </style>
+</head>
+<body>
+<ul id="list">
+    <!--<li>//第一行的列是一列
+        <span>1*1=1</span>
+    </li>
+    <li>//第二行的列是两列
+        <span>1*2=2</span>
+        <span>2*2=4</span>
+    </li>-->
+</ul>
+<script>
+    //99乘法表的第一个数字是列数，第二个数字是行数
+    //我们需要两个值，一个是代表列，一个代表行
+    //用两个变量分别代表行和列，那么这两个变量应该是从1开始到9结束
+    //先有行还是先有列==》先有行才有列
+    var str='';
+    /*str+='<li>';
+    str+='<span>1*1=1</span>';
+    str+='</li>';
+    str+='<li>';
+    str+='<span>1*2=2</span><span>2*2=4</span>';
+    str+='</li>';*/
+    for (var i=1;i<=9;i++){
+
+        str+="<li>";
+        for(var j=1;j<=i;j++){
+            str+="<span>" +j+ "*" +i+ "="+(j*i)+ "</span>";
+        }
+        str+="</li>";
+    }
+     list.innerHTML=str;
+    //document.write(str);
+   // ***********************************************************************************
+    var oSpan=document.getElementsByTagName('span');
+    for(var i=0;i<oSpan.length;i++){
+        var cur=oSpan[i];
+//        cur.className='bg'+(i%3);
+        switch (i%3){
+            case 0:
+                cur.className='bg0';
+                break;
+            case 1:
+                cur.className='bg1';
+                break;
+            default:
+                cur.className='bg3';
+        }
+
+    }
+</script>
+</body>
+</html>

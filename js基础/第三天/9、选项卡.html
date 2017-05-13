@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            padding: 20px;
+            background: red;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .clear:after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+        div {
+            display: none;
+            width: 264px;
+            height: 200px;
+            font-size: 50px;
+            text-align: center;
+            line-height: 200px;
+            background: indianred;
+            color: #fff;
+        }
+
+        li.cur {
+            background: indianred;
+        }
+
+        div.cur {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul id="nav" class="clear">
+    <li class="cur">第一项</li>
+    <li>第二项</li>
+    <li>第三项</li>
+</ul>
+<div class="cur">
+    第一个div
+</div>
+<div>
+    第二个div
+</div>
+<div>
+    第三个div
+</div>
+<script>
+    //选项卡的原理
+    /*
+     点击切换的时候，将特殊的类名给到当前操作的对象，其他对象应该清除掉这个特殊的类名
+     1、清除类名
+     2、给特定的对象添加类名
+     */
+    var oLis = document.getElementsByTagName('li');
+    var oDivs = document.getElementsByTagName('div');
+    for (var i = 0; i < oLis.length; i++) {
+        oLis[i].index = i;
+        /*索引*/
+        oLis[i].onclick = function () {
+            console.log(this);
+            console.log(this.index);
+            for (var j = 0; j < oLis.length; j++) {
+                console.log(j);
+                oLis[j].className = '';
+                oDivs[j].className = '';
+            }
+            //给点击的这个li加上类名
+            //给这个li对应的div也加上类名
+            //console.log(i);//3
+            /*oLis[i].className='cur';
+             oDivs[i].className='cur';*/
+            this.className = 'cur';
+            oDivs[this.index].className = 'cur';
+        }
+    }
+
+
+    /*
+     * oLis[0]-->oDivs[0]
+     * */
+</script>
+</body>
+</html>

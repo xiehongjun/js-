@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script>
+    function sum() {
+        var total=null;//var total='';
+        for(var i=0;i<arguments.length;i++){
+            //将实参中的每一项都转化为数字，
+            var cur=Number(arguments[i]);
+            //判断cur是数字就进行累加，不是数字就忽略
+            //isNaN（cur）检测一个值不是数字---true
+            //!isNaN（cur）是数字--true
+            if(!isNaN(cur)){
+                //是数字的累加
+                total+=cur;
+            }
+
+        }return total;
+
+    }console.log(sum(1,2,'33px'));
+</script>
+
+</body>
+</html>

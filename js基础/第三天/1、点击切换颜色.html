@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            text-align: center;
+        }
+        #btn{
+            /*display: block;
+            margin: 0 auto;*/
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+        #box{
+            margin: 0 auto;
+            width: 500px;
+            height: 500px;
+            border: 1px solid grey;
+        }
+        .bg1{
+            background: #f00;
+        }
+        .bg2{
+            background: #ff0;
+        }
+        .bg3{
+            background: #f60;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="点击" id="btn">
+<div id="box"></div>
+<script>
+    //获取要操作的元素
+    var oBtn=document.getElementById('btn');
+    var oBox=document.getElementById('box');
+    //在整个文档下，通过id名称获取‘一个’元素
+    //alert(oBox,oBtn);
+    //点击oBtn，让oBox的背景颜色切换
+    //oBtn.onclick=oBox.style.backgroundColor='red';
+    oBtn.onclick=function () {
+        //oBox.style.backgroundColor='red';
+        //oBox.className='bg';
+        var bg=oBox.className;//用一个变量存储这个元素原来的class值
+        //console.log(bg);
+        /*if(bg=='bg1'){
+            oBox.className='bg2';
+        }else if(bg=='bg2'){
+            oBox.className='bg3';
+        }else{
+            oBox.className='bg1';
+        }*/
+        //如果bg最初值为空的时候，是不需要判断，直接进入else
+        /*if(bg==='bg1'){
+            oBox.className='bg2';
+        }else if(bg==='bg2'){
+            oBox.className='bg3';
+        }else{
+            oBox.className='bg1';
+            //只要bg的值不是bg1或bg2的时候，class的值就是bg1
+        }*/
+        switch (bg){
+            case 'bg1':
+                oBox.className='bg2';
+                break;
+            case 'bg2':
+                oBox.className='bg3';
+                break;
+            default:
+                oBox.className='bg1';
+        }
+    }
+</script>
+
+</body>
+</html>

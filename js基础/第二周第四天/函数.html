@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li{height: 30px}
+        .bg1{
+            background: red;
+        }
+        .bg2{
+            background: yellow;
+        }
+        .bg3{
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    var oLis=document.getElementsByTagName('li');
+    for (var i=0;i<oLis.length;i++){
+        if(i%2===0){
+            oLis[i].className='bg1';
+            oLis[i].bg='bg1';
+        }else{
+            oLis[i].className='bg2';
+            oLis[i].bg='bg2';
+        }
+        oLis[i].onmouseover=function () {
+            this.className='bg3';
+        };
+        oLis[i].onmouseout=function () {
+            this.className=this.bg;
+        };
+        oLis[i].index=i;
+        oLis[i].onclick=function () {
+            alert('我是第'+(this.index+1)+'项');
+        }
+    }
+    /*function sum() {
+        var total=null;
+        for (var i=0;i<arguments.length;i++){
+            var cur=Number(arguments[i]);
+            if(!isNaN(cur)){
+                total+=cur;
+            }
+        }
+        return total;
+    }
+    var total=sum(1,2,3,4,'a','b');
+    console.log(total);*/
+</script>
+</body>
+</html>

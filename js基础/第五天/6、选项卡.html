@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+        ul{
+            list-style: none;
+            margin: 20px auto 0;
+            width: 300px;
+            height: 40px;
+            background: palegoldenrod;
+        }
+        li{
+            float: left;
+            width: 100px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        li.cur{
+            background: pink;
+            color: #fff;
+        }
+        div{
+            display: none;
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-size:50px;
+            background: pink;
+        }
+        div.cur{
+            display: block;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="cur">第一项</li>
+    <li>第二项</li>
+    <li>第三项</li>
+</ul>
+<div class="cur">
+    第一项
+</div>
+<div>
+    第二项
+</div>
+<div>
+    第三项
+</div>
+<script>
+    var oLis=document.getElementsByTagName('li');
+    //[li,li,li] 0:li 1:li 2:li length:3
+    var oDivs=document.getElementsByTagName('div');
+    for (var i=0;i<oDivs.length;i++){
+        //进行自定义属性的赋值
+        /*oLis[0].index=0;
+        oLis[1].index=1;
+        oLis[2].index=2;*/
+        oLis[i].index=i;
+        oLis[i].onmouseover=function () {
+            //让所有的li和div的特殊样式清除
+            for (var j=0;j<oLis.length;j++){
+                oLis[j].className='';
+                oDivs[j].className='';
+            }
+            //要给当前操作的对象和当前对象对应的div添加特殊的样式，也就是cur这个类名
+            //oLis[i].className='cur';//i=3
+            this.className='cur';
+            //this.className='cur';//div不是当前操作的对象
+            //oDivs[当前操作对象的索引].className='cur';
+            //事先我需要将当前操作对象的索引值存储起来，存给这个操作对象的自定义属性里面
+            oDivs[this.index].className='cur';
+        }
+    }
+</script>
+</body>
+</html>

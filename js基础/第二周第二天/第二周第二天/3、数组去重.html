@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var ary=[1,1,3,3,2,2];
+    var obj={};
+    for(var i=0;i<ary.length;i++){
+        var cur=ary[i];
+        if(cur==obj[cur]){
+            //cur=1;cur是一个变量，他得到的是一个值，在此处cur=属于cur的重新赋值，跟数组没有关系，如果你想给数组中的某一项赋值，你得直接去操作数组
+            ary[i]=ary[ary.length-1];
+            ary.length--;
+            i--;
+        }
+        obj[cur]=cur;
+    }
+    console.log(ary);
+
+
+
+
+
+
+    /*for(var i=0;i<ary.length;i++){
+        var cur=ary[i];//cur是数组中的每一项
+        if(cur==obj[cur]){
+            ary.splice(i,1);//原数组改变
+            i--;
+        }
+        //如果当前循环的数组项中的值，已经在obj这个对象中存在，就删除掉数组的当前项
+        obj[cur]=cur;
+        //obj[1]=1
+    }
+    console.log(ary);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //  ary=[1,3,3,2,2]
+    //  ary=[1,3,(3),2,2]
+    //  ary=[1,3,2,2]
+    //  ary=[1,3,2,2]
+    //  ary=[1,3,2,(2)]
+
+    //i-->1
+    //i-->1删掉了
+    //ary=[1,2,3]
+    //var obj={};
+    //obj[1]=1
+    //判断ary的第二项，和obj的第二项是否相同，如果相同，就将ary的当前项删除
+    //将obj的每一项属性值和ary的每一项属性值比较
+    /*for(var i=0;i<ary.length;i++){
+        var cur=ary[i];
+        if(obj[cur]==cur){
+            ary.splice(i,1);
+            i--;
+        }
+        obj[cur]=cur;
+    }
+    console.log(ary);*/
+    /*//1:1
+     //1:1
+     //3:3
+     //3:3
+     //2:2
+     //2:2*/
+</script>
+</body>
+</html>

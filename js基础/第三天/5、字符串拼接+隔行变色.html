@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body id="list">
+<div id="div1">
+
+</div>
+<script>
+    var oDiv=document.getElementById('div1');
+    var str='';
+    str+='<ul style="background: red;">';
+    for(var i=1;i<=10;i++){
+        str+='<li style="height: 30px;line-height: 30px;">'+i+'</li>';
+    }
+    str+='</ul>';
+    oDiv.innerHTML=str;
+    var oLis=document.getElementsByTagName('li');
+    //0-length-1
+    for (var i=0;i<oLis.length;i++){
+        oLis[i].style.color='#fff';
+        if(i%2===0){
+            oLis[i].style.backgroundColor='green';
+        }else{
+            oLis[i].style.backgroundColor='yellow';
+        }
+    }
+</script>
+<!--<script>
+    var list=document.getElementById('list');
+    var oDiv=document.getElementById('div1');
+    var str='';
+    str+='<ul>';
+    //str+='123';
+    /*str+='<li>1</li>';
+    str+='<li>2</li>';
+    str+='<li>3</li>';*/
+    for(var i=1;i<=10;i++){
+        str+='<li>' + i + '</li>';
+        //只要是在成对引号中的内容都是字符串
+    }
+    str+='</ul>';
+    //console.log(str);
+    //document.write(str);
+    oDiv.innerHTML=str;
+
+
+
+
+
+    //var str='';//在整个文档下声明一个变量，这个变量是一个盒子，我要将我在js中拼接的所有字符串，都放在这个盒子里面
+    // str='a' str='b' ==>str='b'
+    //str+='a' str+='b' ==>str='a+b'
+    //+= 是保存盒子原来的东西，继续累加
+    //=  是替换掉盒子原来的东西
+    /*str+=1;//''+1 ==>'1'
+    //console.log(str);//'1'
+    str+=1;
+    console.log(str);//''+1+1==>'11'*/
+
+    /*str=1;
+    console.log(str);
+    str+1;
+    console.log(str);
+    str+1;
+    console.log(str);*/
+</script>-->
+</body>
+</html>

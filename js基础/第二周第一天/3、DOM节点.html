@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    <ul id="list">
+        <li>1</li>
+        <!----><li id="list2">2</li><!---->
+        <li>3</li>
+    </ul>
+    <p>111</p>
+    <p>222</p>
+    <p>222</p>
+</div>
+<script>
+    var oDiv=document.getElementById('div1');
+    var nodes=oDiv.childNodes;
+    console.log(nodes);
+    //[text, ul#list, text, p, text, p, text, p, text]
+    var eNodes=oDiv.children;
+    console.log(eNodes);
+    //[ul#list, p, p, p]
+    var oList2=document.getElementById('list2');
+    var parNode=oList2.parentNode;
+    console.log(parNode);
+    var pre=oList2.previousSibling;
+    var next=oList2.nextSibling;
+    var ePre=oList2.previousElementSibling;
+    var eNext=oList2.nextElementSibling;
+    console.log(pre,next);
+    console.log(ePre,eNext);
+    var fNode=oDiv.firstChild;
+    var efNode=oDiv.firstElementChild;
+    var lNode=oDiv.lastChild;
+    var elNode=oDiv.lastElementChild;
+    console.log(fNode,lNode);
+</script>
+</body>
+</html>

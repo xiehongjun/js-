@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css1.css" id="link">
+</head>
+<body id="con">
+<script>
+    var oLink=document.getElementById('link');
+    var oCon=document.getElementById('con');
+    //console.log(oCon,oLink);
+    console.dir(oLink);
+    oCon.onclick=function () {
+        //oLink.href='css2.css';
+        var file=oLink.href;
+        console.log(file);
+        //file:///D:/2016%E6%95%99%E5%AD%A6/%E5%8D%81%E4%B8%89%E6%9C%9Fjs%E5%9F%BA%E7…0%E8%AF%BE/%E7%AC%AC%E4%B8%80%E5%91%A8%E7%AC%AC%E4%B8%89%E5%A4%A9/css1.css
+        if(file=='css1.css'){
+            oLink.href='css2.css';
+        }else{
+            oLink.href='css1.css';
+        }
+    }
+</script>
+</body>
+</html>

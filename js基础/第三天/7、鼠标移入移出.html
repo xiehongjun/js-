@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            background: #f8f8f8;
+            font: 18px/1.5 '微软雅黑';
+        }
+        ul{
+            margin: 0 auto;
+            list-style: none;
+            padding-left: 20px;
+            width: 600px;
+            background: red;
+        }
+        li{
+            line-height: 35px;
+        }
+        a{
+            text-decoration: none;
+            color:#fff;
+        }
+        .bg1{
+            background: pink;
+        }
+        .bg2{
+            background: greenyellow;
+        }
+        .bg3{
+            background: blue;
+        }
+        /*li:hover{
+            background: blue;
+        }*/
+    </style>
+</head>
+<body>
+<ul>
+    <li>
+        <a href="###" target="_blank">中国“人造太阳”实验装置再获重大突破</a></li>
+    <li>
+        <a href="###" target="_blank">中央巡视27单位京渝4地回头看 提查找政治偏差</a></li>
+    <li>
+        <a href="###" target="_blank">金正日昔日讲话曝光 批评本国电影太僵化</a></li>
+    <li>
+        <a href="###" target="_blank">江苏产大闸蟹二恶英超标 涉事企业已暂停出口报检</a></li>
+    <li>
+        <a href="###" target="_blank">被押运员击毙男子昨解剖 押运公司未道歉</a></li>
+    <li>
+        <a href="###" target="_blank">韩国网民为海警向中国渔船开火叫好 称击沉就更好了</a></li>
+    <li>
+        <a href="###" target="_blank">中国“人造太阳”实验装置再获重大突破</a></li>
+    <li>
+        <a href="###" target="_blank">中央巡视27单位京渝4地回头看 提查找政治偏差</a></li>
+    <li>
+        <a href="###" target="_blank">金正日昔日讲话曝光 批评本国电影太僵化</a></li>
+    <li>
+        <a href="###" target="_blank">江苏产大闸蟹二恶英超标 涉事企业已暂停出口报检</a></li>
+    <li>
+        <a href="###" target="_blank">被押运员击毙男子昨解剖 押运公司未道歉</a></li>
+    <li>
+        <a href="###" target="_blank">韩国网民为海警向中国渔船开火叫好 称击沉就更好了</a></li>
+</ul>
+<script>
+    var oLis=document.getElementsByTagName('li');
+    for(var i=0,n=oLis.length;i<n;i++){
+        //i<oLis.length 每一次循环都会去获取一次长度
+        var cur=oLis[i];
+        //保存索引
+        cur.index=i;
+        //弹出索引
+        cur.onclick=function () {
+            alert(this.index);
+        }
+        //隔行变色
+        cur.className='bg'+(i%2+1);
+        //鼠标移入移出
+        var oldBg=null;
+        cur.onmouseover=function () {
+            oldBg=this.className;
+            this.className='bg3';
+        };
+        cur.onmouseout=function () {
+            this.className=oldBg;
+        };
+
+    }
+    /*for (var i=0;i<oLis.length;i++){
+        i%2===0?(oLis[i].className='bg1',oLis[i].index='bg1'):(oLis[i].className='bg2',oLis[i].index='bg2');
+        oLis[i].onmouseover=function () {
+            this.className='bg3';
+        }
+        oLis[i].onmouseout=function () {
+            this.className=this.index;
+        }
+    }*/
+</script>
+<!--<script>
+    var oLis=document.getElementsByTagName('li');
+    for (var i=0;i<oLis.length;i++){
+        if(i%2===0){
+            oLis[i].className='bg1';
+            oLis[i].index='bg1';
+        }else{
+            oLis[i].className='bg2';
+            oLis[i].index='bg2';
+        }
+        //在js中鼠标经过，分为移入和移出两个事件
+        //var oldBg=null;
+        oLis[i].onmouseover=function () {
+            //鼠标移入
+            //oLis[i].className='bg3';
+            //console.log(i);//12
+            //oldBg=this.className;
+            this.className='bg3';
+        };
+        oLis[i].onmouseout=function () {
+            //鼠标移出
+            //需要回到原来的类名，但是原来的类名已经被bg3覆盖了，我们需要在bg3覆盖前，将原来的类名保存起来
+            //存给谁？？？？变量  属性（自定义）
+            /*this.className='bg1';
+            this.className='bg2';*/
+            //this.className=oldBg;
+            this.className=this.index;
+        }
+    }
+</script>-->
+</body>
+</html>

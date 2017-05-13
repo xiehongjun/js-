@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<script>
+    var obj = {
+        name: '耿大爷',
+        age: '40岁',
+        like: '蓝孩子',
+        1:110
+    };
+    obj.age='41岁';
+    obj[2]='珠峰培训';
+    delete obj[1];
+    obj.like=null;
+    console.log(obj.name);//'耿大爷'
+    console.log(obj['1']);//110
+    console.log(obj[1]);//110
+    console.log(obj['age']);//'41岁'
+    console.log(obj);
+</script>-->
+<script>
+    var ary=[function(){},'1',2,'qbc'];
+    console.dir(ary);
+    console.log(ary[0]);
+    console.log(ary[1]);
+    console.log(ary[2]);
+    /*以下都是数组的键值对
+    数组的属性名不是人为定义的，是数组天生自带的一系列序数，从0开始到length-1结束，我们叫这些序数为索引，数组的索引就是数组每一项属性值的属性名
+    0:function(){}
+    1:'1'
+    2:2
+    length:3
+    __proto__:Array[0]
+    */
+</script>
+</body>
+</html>

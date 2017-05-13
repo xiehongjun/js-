@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            padding: 0 20px;
+        }
+        .bg0{
+            background: red;
+        }
+        .bg1{
+            background: yellow;
+        }
+        .bg2{
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+
+</ul>
+复习 复习
+1、99乘法表+隔行变色+点击弹出+移入移出（机试题+笔试）敲5遍 写5遍
+
+2、选项卡 敲5遍 写5遍
+<script>
+    //99乘法表
+    var str='';
+    for (var i=1;i<=9;i++){
+        str+='<li>';
+        for (var j=1;j<=i;j++){
+            str+='<span>';
+            str+= j + '*' + i + '=' +(j*i);
+            str+='</span>';
+           //str+='<span>'+j+'*'+i+'='+(j*i)+'</span>';
+        }
+        str+='</li>';
+    }
+    list.innerHTML=str;
+   //隔行变色
+    var oLis=document.getElementsByTagName('li');
+    for (var i=0;i<oLis.length;i++){
+        if(i%2===0){
+            oLis[i].className='bg0';
+            oLis[i].bg='bg0';
+        }else{
+            oLis[i].className='bg1';
+            oLis[i].bg='bg1';
+        }
+        //移入移出
+        oLis[i].onmouseover=function () {
+            this.className='bg2';
+        };
+        oLis[i].onmouseout=function () {
+            this.className=this.bg;
+        };
+        oLis[i].index=i;
+        //弹出框
+        oLis[i].onclick=function () {
+            alert('我是第'+(this.index+1)+'行');
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

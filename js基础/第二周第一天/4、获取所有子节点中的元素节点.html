@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    <p>111</p>
+    <p>222</p>
+    <p>333</p>
+    <p>444</p>
+    <ul>
+        <li></li>
+    </ul>
+    <input type="text">
+</div>
+<ul id="list">
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<!--<script>
+    var oDiv=document.getElementById('div1');
+    // nodeLists=oDiv.childNodes;//获取所有子节点
+    //xxx.nodeType===1
+    /*var ary=[];
+    for(var i=0;i<nodeLists.length;i++){
+        var cur=nodeLists[i];
+        if(cur.nodeType===1){
+            ary.push(cur);//向数组末尾添加一项
+        }
+    }
+    console.log(ary);*/
+    //ele  element
+    /*function nodeAll(ele) {//ele&#45;&#45;div
+        var ary=[];
+        var nodeList=ele.childNodes;
+        for(var i=0;i<nodeList.length;i++){
+            var cur=nodeList[i];
+            if(cur.nodeType===1){
+                ary.push(cur);
+            }
+        }
+        return ary;
+    }
+    console.log(nodeAll(oDiv));
+    console.log(nodeAll(list));*/
+    //var eleNodes=oDiv.children;
+    //console.log(eleNodes);
+    //[p, p, p, p, ul, input]
+
+    //ele是指父级节点
+    //tagName是指指定的html标签
+    function tagNode(ele,tagName) {
+        var ary=[];
+        var nodeList=ele.childNodes;//获取ele所有的子节点
+        for(var i=0;i<nodeList.length;i++){
+            var cur=nodeList[i];
+            if(cur.nodeType===1){
+                //形参设定，实参也可以不传
+                //如果指定标签tagName不传，我就获取ele下所有的元素子节点，如果传递了tagName我就进行匹配（又一次判断）
+                if(tagName){//tagName存在 返回true
+                    //nodeName获取到的是大写的标签名
+                    //input===cur.nodeName
+                    if(tagName.toLowerCase()==cur.nodeName.toLowerCase()){
+                        ary.push(cur);
+                    }
+                }else{
+                    ary.push(cur);
+                }
+            }
+        }
+        return ary;
+    }
+    var p=tagNode(oDiv,'input');//一定是小写吗
+    console.log(p);
+</script>-->
+<!--<script>
+    //封装一个方法，可以获得指定元素下所有的元素子节点，并且如果向函数内传指定元素的标签名，我们还可以获得指定元素子节点
+    function tagNode(ele,tagName) {
+        var ary=[];//创建一个数组，未来取到的所有项，添加到这个数组中
+        var nodeList=ele.childNodes;//获取指定元素的多有子节点
+        //筛选所有子节点中的元素节点
+        for(var i=0;i<nodeList.length;i++){
+            //将每一个子节点的nodeType值和1比较，如果匹配成功，就像数组中添加
+            var cur=nodeList[i];
+            if(cur.nodeType===1){
+                //如果传递了tagName，我们就进行匹配，如果不传递，就直接输出所有的元素子节点
+                if(tagName){//返回值为true，就证明了传递了tagName的值
+                     //节点的nodeName值为大写的标签名，让每一个元素节点的nodeName值和传进来的值进行匹配
+                    if(tagName.toUpperCase()===cur.nodeName.toUpperCase()){
+                        //cur.nodeName 大写的标签名
+                        //tagName 传递的值不一定是大小写
+                        //将等号两侧的大小写同一
+                        ary.push(cur);
+                    }
+                    continue;
+                }
+                ary.push(cur);
+            }
+        }
+        return ary;
+    }
+    console.log(tagNode(div1,'p'));
+</script>-->
+</body>
+</html>

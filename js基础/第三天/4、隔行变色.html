@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隔行变色</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            background: #f8f8f8;
+            font: 18px/1.5 '微软雅黑';
+        }
+        ul{
+            margin: 0 auto;
+            list-style: none;
+            padding-left: 20px;
+            width: 600px;
+            background: red;
+        }
+        li{
+            line-height: 35px;
+        }
+        a{
+            text-decoration: none;
+            color:#fff;
+        }
+        .bg1{
+            background: pink;
+        }
+        .bg2{
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<!--
+两行一个循环
+第一行是粉色
+第二行是嫩绿色
+第三行是粉色
+第四行是嫩绿色
+-->
+<!--ul>li{我是列表项}*10-->
+<ul>
+    <li>
+        <a href="###" target="_blank">中国“人造太阳”实验装置再获重大突破</a></li>
+    <li>
+        <a href="###" target="_blank">中央巡视27单位京渝4地回头看 提查找政治偏差</a></li>
+    <li>
+        <a href="###" target="_blank">金正日昔日讲话曝光 批评本国电影太僵化</a></li>
+    <li>
+        <a href="###" target="_blank">江苏产大闸蟹二恶英超标 涉事企业已暂停出口报检</a></li>
+    <li>
+        <a href="###" target="_blank">被押运员击毙男子昨解剖 押运公司未道歉</a></li>
+    <li>
+        <a href="###" target="_blank">韩国网民为海警向中国渔船开火叫好 称击沉就更好了</a></li>
+    <li>
+        <a href="###" target="_blank">中国“人造太阳”实验装置再获重大突破</a></li>
+    <li>
+        <a href="###" target="_blank">中央巡视27单位京渝4地回头看 提查找政治偏差</a></li>
+    <li>
+        <a href="###" target="_blank">金正日昔日讲话曝光 批评本国电影太僵化</a></li>
+    <li>
+        <a href="###" target="_blank">江苏产大闸蟹二恶英超标 涉事企业已暂停出口报检</a></li>
+    <li>
+        <a href="###" target="_blank">被押运员击毙男子昨解剖 押运公司未道歉</a></li>
+    <li>
+        <a href="###" target="_blank">韩国网民为海警向中国渔船开火叫好 称击沉就更好了</a></li>
+</ul>
+<script>
+    /*
+    * 1、获取所有的li
+    * 2、给每一个li的class属性赋值--循环
+    * 2.1、是奇数行还是偶数行--判断奇偶行--判断
+    * 奇数行--class=bg1
+    * 偶数行--class=bg2
+    * */
+    //var oLis=document.getElementsByTagName('li');
+    //在当前文档下，通过标签名（tagName）获取‘一组’元素，也就是说oLis里面存的值不是一个单独的值，而是一个集合,那么这个集合我们称之为‘类数组’
+    //类数组：和数组很像，有索引，有长度，并且索引就是当前这个值的属性名，那么同时这个类数组也是一个对象，我们就可以通过--对象名[属性名]的形式来获取我们要找的元素
+    //oLis[0]--获取第一个li
+    //oLis[1]--获取第二个li
+    //console.log(typeof oLis);//'object'
+    //[li,li,li,li,li.....]
+    /*
+    0:li
+    1:li
+    2:li
+    .
+    .
+    11:li
+    length:12
+    */
+   /* oLis[0].className='bg1';
+    oLis[1].className='bg2';
+    oLis[2].className='bg1';
+    oLis[3].className='bg2';
+    oLis[4].className='bg1';
+    oLis[5].className='bg2';
+    oLis[6].className='bg1';
+    oLis[7].className='bg2';
+    oLis[8].className='bg1';
+    oLis[9].className='bg2';
+    oLis[10].className='bg1';
+    oLis[11].className='bg2';*/
+   //12和获取到集合的长度一致
+//   for(var i=0;i<oLis.length;i++){
+//       //oLis[i].className='bg1';
+//       //判断奇数还是偶数行
+//       //能被2整除的是偶数 不能被2整除的是奇数
+//       //索引为0的时候，是第一行，0/2是可以整除的
+//       //在我们这个集合中，可以整除的是奇数行，不能整除的是偶数行
+//       /*if(i%2===0){
+//           oLis[i].className='bg1';
+//       }else{
+//           oLis[i].className='bg2';
+//       }*/
+//       /*i%2===0?oLis[i].className='bg1':oLis[i].className='bg2';*/
+//       //oLis[i].className='bg'+(i%2+1);
+//   }
+</script>
+<script>
+    //1、获取要操作的所有对象
+    var oLis=document.getElementsByTagName('li');
+
+   //oLis 是一个集合[li,li,li....]
+    //oLis 是一个对象
+    //console.log(oLis[0]);
+   // oLis[0].className='bg1';
+   // oLis[1].className='bg2';
+    for (var i=0;i<oLis.length;i++){
+        //(1)
+       /* if(i%2===0){
+            oLis[i].className='bg1';
+            //oLis[0].className='bg1';
+            //oLis[2].className='bg1';
+            //oLis[4].className='bg1';
+        }else{
+            oLis[i].className='bg2';
+            //oLis[1].className='bg2';
+            //oLis[3].className='bg2';
+            //oLis[5].className='bg2';
+        }
+        //(2)
+        switch (i%2){
+            case 0:
+                oLis[i].className='bg1';
+                break;
+            default:
+                oLis[i].className='bg2';
+        }
+        //(3)
+         i%2===0?oLis[i].className='bg1':oLis[i].className='bg2';*/
+        //(4)
+        oLis[i].className='bg'+(i%2+1);
+    }
+</script>
+</body>
+</html>

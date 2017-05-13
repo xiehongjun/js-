@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{
+            position: absolute;
+            /*top:100px;*/
+            /*left: 50px;*/
+            width: 100px;
+            height: 100px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var box=document.getElementById('box');
+    var val=0;
+    //clearInterval();//在定时器执行之前，先关掉定时器，再执行
+    var tem=window.setInterval(function () {
+        val+=10;
+        box.style.left=val+'px';
+        if(val===50){
+            clearInterval(tem);//定时器执行完成，就清除掉当前定时器
+        }
+    },1000);
+    //clearInterval();//存在清除 以下的定时器受影响  left停止 top执行
+    var tem1=window.setInterval(function () {
+        val+=10;
+        box.style.top=val+'px';
+        if(val===50){
+            clearInterval(tem1);//定时器执行完成，就清除掉当前定时器
+        }
+    },1000);
+    /*var tem1=window.setTimeout(function () {
+        val+=10;
+        box.style.left=val+'px';
+    },1000);*/
+
+
+
+    /*var box=document.getElementById('box');
+    var left=10;
+    function right() {
+        /!*val1+=10;
+        box.style.left=val1+'px';*!/
+        box.style.left+=left+'px';
+    }*/
+    //right();
+    //1000 毫秒==1秒
+    /*var val=10;
+    var te=window.setInterval(function () {
+        val+=10;
+        box.style.left=val+'px';
+        if(val===100){
+            clearInterval(te);
+        }
+    },100);*/
+
+</script>
+</body>
+</html>

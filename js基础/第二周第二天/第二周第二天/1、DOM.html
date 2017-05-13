@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM复习</title>
+</head>
+<body>
+<script>
+    /*
+    1、通过DOM获取元素的方法：
+    id        获取一个元素，获取范围之内是document.
+    name      获取一组元素，获取到的是一个类数组 索引从0开始
+    tagName   获取一组元素，获取到的是一个类数组 索引从0开始
+    className 获取一组元素，获取到的是一个类数组 索引从0开始
+    获取集合中的某一个值，变量名[索引值] 变量名.item(索引值)
+    获取根元素{
+        html：document.documentElement
+        body：document.body
+    }
+    2、DOM的节点和关系属性
+    节点：document下所有的文本、注释、标签、document等等都是节点，这些节点描述了整个DOM的图谱
+
+     childNodes 获取所有的子节点（一组）
+     children   获取所有元素子节点（一组）
+     parentNode 获取父亲节点
+     previousSibling 获取上一个节点  previousElementSibling 上一个元素节点（不兼容）
+     nextSibling 获取弟弟节点   nextElementSibling下一个元素节点（不兼容）
+     firstChild 获取子节点中的第一个  firstElementChild
+     lastChild  获取子节点中最后一个  lastElementChild
+
+     3、DOM的增删改查
+     创建一个元素节点
+     var oDiv=document.createElement('div');
+     将创建的元素节点添加到指定对象所有内容之后
+     指定对象.appendChild(oDiv);
+     添加到指定对象之前
+     父级对象.insertBefore(new,old)
+     删除对象
+     父级对象.removeChild(删除的对象)
+     oDiv.cloneNode(true)
+     如果参数为true：是将当前元素下所有的元素克隆一份
+     默认参数为false：只克隆当前元素
+     替换
+     父级元素.replaceChild(替换的对象，被替换的对象)
+     */
+</script>
+</body>
+</html>

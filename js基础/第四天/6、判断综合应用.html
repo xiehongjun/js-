@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            border:3px solid yellow;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<!--
+需求：
+有三个按钮input和一个div，点击第一个按钮，div的背景颜色变红色，点击第二个按钮，背景颜色为黄色，点击第三个按钮背景颜色为蓝色
+-->
+<input type="button" value="按钮1" id="btn1">
+<!--<input type="button" value="按钮2" id="btn2">
+<input type="button" value="按钮3" id="btn3">-->
+<div id="div" style="background: greenyellow;">
+    我是那无辜的div
+</div>
+<!--<script>
+    //获取要操作的DOM对象
+    //分别给每一个按钮绑定点击事件
+    var oBtn1=document.getElementById('btn1');
+    //声明变量oBtn=在整个文档下，通过id名获取一个元素
+    //console.log(oBtn1);
+    var oBtn2=document.getElementById('btn2');
+    var oBtn3=document.getElementById('btn3');
+    var oDiv=document.getElementById('div');
+    //oDiv.style.backgroundColor='red';页面加载完成之后，div就变红了
+    //给这个对象的style.backgroundColor赋值为红色
+    //.style这种形式，只能添加行内样式/获取行内样式
+
+    oBtn1.onclick=function () {
+        oDiv.style.backgroundColor='red';
+    };
+    oBtn2.onclick=function () {
+        oDiv.style.backgroundColor='yellow';
+    };
+    oBtn3.onclick=function () {
+        oDiv.style.backgroundColor='blue';
+    };
+</script>-->
+<!--
+有一个按钮，点击第一次，div为红色，点击第二次div为黄色，点击第三次div为蓝色，点击第四次，div为红色........红黄蓝一直在切换
+-->
+<script>
+    //获取DOM对象
+    //如果div的背景颜色为红色，让他的颜色变为黄色，如果为黄色，变为蓝色
+    //每一次点击的时候，都要获取并判断当前的背景颜色的值
+    var oBtn=document.getElementById('btn1');
+    var oDiv=document.getElementById('div');
+    oBtn.onclick=function () {
+        var bg=oDiv.style.backgroundColor;
+        //console.log(bg);//greenyellow
+        if(bg==='red'){
+            oDiv.style.backgroundColor='yellow';
+        }else if(bg==='yellow'){
+            oDiv.style.backgroundColor='blue';
+        }else{
+            oDiv.style.backgroundColor='red';
+        }
+    }
+
+</script>
+</body>
+</html>

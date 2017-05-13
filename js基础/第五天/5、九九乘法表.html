@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        span{margin: 0 20px}
+        .bg1{background: red}
+        .bg2{background: yellow}
+        .bg3{background: blue}
+    </style>
+</head>
+<body id="box">
+<!--<p class="bg1">
+    <span>1*1=1</span>
+</p>
+<p class="bg2">
+    <span>1*2=2</span><span>2*2=4</span>
+</p>-->
+<script>
+    var box=document.getElementById('box');
+    var str='';//用来放置我拼接的所有内容,这些内容都是逐步累加的
+    for (var i=1;i<=9;i++){
+        str+="<p class='bg" +(i%3+1)+ "'>";
+        for(var j=1;j<=i;j++){
+            str+='<span>'+j+'*'+i+'='+(j*i)+'</span>';
+        }
+        str+="</p>";
+    }
+//    box.innerHTML=str;
+    document.write(str);
+    /*var oP=document.getElementsByTagName('p');
+    for (var i=0;i<9;i++){
+        oP[i].className='bg'+(i%3+1);
+        /!*if(i%3===0){
+            oP[i].className='bg1';
+        }else if(i%3===1){
+            oP[i].className='bg2';
+        }else {
+            oP[i].className='bg3';
+        }*!/
+    }*/
+    /*str+="<p></p>"
+    str+="<p></p>"
+    str+="<p></p>"
+    str+="<p></p>"
+    str+="<p></p>"*/
+</script>
+
+</body>
+</html>

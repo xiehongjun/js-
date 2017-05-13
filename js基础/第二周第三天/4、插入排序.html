@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    //需要有一个新数组，将ary里面的每一项和新数组进行比较，从后向前比较，如果ary中的这一项小于新数组的每一项，那么就添加到新数组对前面，如果和新数组的当前项进行比较大于新数组的这一项就放在这一项的后面，如果ary中的这一项小于新数组和他比较的当前项，就继续向前比较
+    var ary=[6,7,8,1,2,5,9];
+    function insert(ary) {
+        var newAry=[];
+        //将ary中的第一项放在新数组中，作为参照项
+        newAry.push(ary[0]);
+        //console.log(newAry);
+        for (var i=1;i<ary.length;i++) {
+            for (var j = newAry.length - 1; j >= 0;) {
+                //ary[i]  //i在这个循环中是不变的
+                //newAry[j]//j在这个循环中是递减的
+                if (ary[i] < newAry[j]) {
+                    //ary[i]<newAry[0];
+                    j--;//当ary的当前项小于newAry的这一项的时候，继续向前进行比较
+                    //如果ary的当前项，一直小于newAry的每一项的时候，我就讲ary的当前项，放在newAry的最前面
+                    //j在本循环内最小值为0,0代表这个数组的第一项
+                    if(j===-1){
+                        newAry.unshift(ary[i]);
+                    }
+                } else {
+                    //从索引n开始，查找0，再将x放在n的前面 n+1
+                    newAry.splice(j + 1, 0, ary[i]);
+                    break;
+                }
+            }
+        }
+            return newAry;
+
+    }
+    console.log(insert(ary));
+
+
+</script>
+</body>
+</html>

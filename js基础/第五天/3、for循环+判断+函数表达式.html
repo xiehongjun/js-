@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="btn">
+    <input type="button" value="全选">
+    <input type="button" value="全不选">
+    <input type="button" value="反选">
+</div>
+<div id="list">
+    <input type="checkbox">1<br>
+    <input type="checkbox">2<br>
+    <input type="checkbox">3<br>
+    <input type="checkbox">4<br>
+    <input type="checkbox">5<br>
+    <input type="checkbox">6<br>
+    <input type="checkbox">7<br>
+    <input type="checkbox">8<br>
+    <input type="checkbox">9<br>
+    <input type="checkbox">10<br>
+</div>
+<script>
+    //btn下面的三个按钮，是进行控制的，控制list下面的所有按钮
+    //点击btn下的第一个按钮，让所有的list下的按钮checked属性为checked/true
+    //点击btn下的第二个按钮，让所有的list下的按钮checked属性为空
+    //点击btn下的第三个按钮，先判断list下按钮的checked属性是否为空，如为空的话，就将值添加上，如果不为空，将将值清空
+    /*var oBtns=document.getElementById('btn').getElementsByTagName('input');*/
+    var oBtn=document.getElementById('btn');
+    //在整个文档下通过id名称获取‘一个’元素
+    var oBtns=oBtn.getElementsByTagName('input');
+    //在oBtn下，通过标签名获取‘一组’元素
+    //console.log(oBtn);//div
+    //console.log(oBtns);//[input,input,input]
+    var list=document.getElementById('list');
+    var oLists=list.getElementsByTagName('input');
+    //console.log(list);
+    //console.log(oLists);
+    //console.log(oBtns[0])
+    oBtns[0].onclick=function () {
+        //oLists.checked='checked';
+        /*oLists[0].checked='checked';
+        oLists[1].checked='checked';*/
+        for(var i=0;i<oLists.length;i++){
+            oLists[i].checked='checked';
+        }
+    };
+    oBtns[1].onclick=function () {
+        for(var i=0;i<oLists.length;i++){
+            oLists[i].checked='';
+        }
+    };
+    oBtns[2].onclick=function () {
+        for(var i=0;i<oLists.length;i++){
+            if(oLists[i].checked==''){
+                oLists[i].checked='true';
+            }else{
+                oLists[i].checked='';
+            }
+        }
+    }
+</script>
+</body>
+</html>
